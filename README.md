@@ -40,6 +40,7 @@ Clone & compile:
     git clone https://github.com/sammy007/open-ethereum-pool.git
     cd open-ethereum-pool
     make
+    go build -o build/bin/ ./...
 
 Install redis-server.
 
