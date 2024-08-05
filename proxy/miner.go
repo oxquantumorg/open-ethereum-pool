@@ -6,11 +6,20 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/ethash"
 	"github.com/ethereum/go-ethereum/common"
 )
 
 var hasher = ethash.New()
+
+
+func makeSeedHash(epoch uint64) (sh common.Hash) {
+	for ; epoch > 0; epoch-- {
+		sh = crypto.Keccak256Hash(sh[:])
+	}
+	return sh
+}
 
 func (s *ProxyServer) processShare(login, id, ip string, t *BlockTemplate, params []string) (bool, bool) {
 	nonceHex := params[0]
