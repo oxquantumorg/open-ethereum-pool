@@ -27,7 +27,7 @@ Dependencies:
   * go >= 1.9 (version 1.22.4 works for me)
   * geth or parity
   * redis-server >= 2.8.0
-  * nodejs >= 4 LTS
+  * nodejs >= 4 LTS (version v10.24.1 works for me)
   * nginx
 
 **I highly recommend to use Ubuntu 16.04 LTS.**
